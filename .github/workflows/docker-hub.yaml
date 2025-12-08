@@ -24,6 +24,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # Get calibreweb version (python package) from file
+      - name: Get version from file
+        id: version
+        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_OUTPUT
+
       # Build and push for both amd64 and arm64
       - name: Build & push multi‑arch image
         run: |
@@ -33,6 +38,7 @@ jobs:
           # Build for linux/amd64 and linux/arm64 and push in one step
           docker buildx build \
             --platform linux/amd64,linux/arm64 \
+            --build-arg CALIBRE_WEB_VERSION=${{ steps.version.outputs.VERSION }} \
             -t $REPO:$TAG \
             -t $REPO:latest \
             --push \
