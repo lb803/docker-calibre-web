@@ -4,7 +4,7 @@ services:
     image: lb803/calibre-web:latest
     container_name: calibre-web
     environment:
-      - CALIBRE_DBPATH=/calibre-web/config
+      - CALIBRE_DBPATH=/calibre-web/config/
     volumes:
       - /path/to/calibre-web/data:/calibre-web/config
       - /path/to/calibre/library:/calibre-web/books

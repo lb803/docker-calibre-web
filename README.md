@@ -19,7 +19,7 @@ docker build . -t lb803/calibre-web \
 ```bash
 docker run -d \
   -p 8083:8083 \
-  -e CALIBRE_DBPATH=/calibre-web/config \
+  -e CALIBRE_DBPATH=/calibre-web/config/ \
   -v /path/to/calibre/library:/calibre-web/books \
   -v /path/to/config:/calibre-web/config \
   --name calibre-web lb803/calibre-web
@@ -36,7 +36,7 @@ services:
     ports:
       - "8083:8083"
     environment:
-      - CALIBRE_DBPATH=/calibre-web/config
+      - CALIBRE_DBPATH=/calibre-web/config/
     volumes:
       - /path/to/calibre/library:/calibre-web/books
       - /path/to/config:/calibre-web/config
