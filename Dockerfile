@@ -8,6 +8,9 @@ RUN apt-get update && \
         imagemagick && \
     rm -rf /var/lib/apt/lists/*
 
+# Allow Imagemagick to extract PDF covers
+RUN sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
+
 RUN groupadd -g 1000 calibre && \
     useradd -m -u 1000 -g calibre -s /bin/bash calibre
 
