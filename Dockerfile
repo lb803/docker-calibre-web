@@ -4,8 +4,9 @@ ARG CALIBRE_WEB_VERSION
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        python3-lxml \
-        python3-magic \
+        libxml2 \
+        libxslt1.1 \
+        libmagic1 \
         ghostscript \
         imagemagick && \
     rm -rf /var/lib/apt/lists/*

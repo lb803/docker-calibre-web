@@ -1,9 +1,9 @@
-**docker‑calibre‑web**  
+# docker‑calibre‑web
 A minimal Dockerfile for running [Calibre‑Web](https://github.com/janeczku/calibre-web).
 
 ---
 
-## Build  
+## Build
 
 Build a specific Calibre‑Web release:
 
@@ -14,7 +14,7 @@ docker build . -t lb803/calibre-web \
 
 ---
 
-## Run  
+## Run
 
 ```bash
 docker run -d \
@@ -25,7 +25,7 @@ docker run -d \
   --name calibre-web lb803/calibre-web
 ```
 
-### With Docker‑Compose  
+### With Docker‑Compose
 
 ```yaml
 version: "3.8"
@@ -47,3 +47,11 @@ Start the stack:
 ```bash
 docker-compose up -d
 ```
+
+## Dependencies
+The Dockerfile installs system libraries required by the Python packages listed below:
+
+| Python package   | System library dependencies |
+|------------------|-----------------------------|
+| **lxml**         | `libxml2`, `libxslt1.1`     |
+| **python‑magic** | `libmagic1`                 |
