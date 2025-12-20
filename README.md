@@ -1,5 +1,12 @@
 # docker‑calibre‑web
-A minimal Dockerfile for running [Calibre‑Web](https://github.com/janeczku/calibre-web).
+Minimal Docker Image for [Calibre‑Web](https://github.com/janeczku/calibre-web).
+
+A lightweight Dockerfile for Calibre-Web that focuses on core functionality and efficiency. Designed for straightforward book library management with essential features:
+
+  - Simple book library management
+  - Support for epub, pdf, and cbr file formats
+  - Cover extraction from supported file types
+
 
 ---
 
