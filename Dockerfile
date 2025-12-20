@@ -7,6 +7,7 @@ RUN apt-get update && \
         libxml2 \
         libxslt1.1 \
         libmagic1 \
+        unar \
         ghostscript \
         imagemagick && \
     rm -rf /var/lib/apt/lists/*
@@ -27,7 +28,10 @@ WORKDIR /calibre-web
 
 RUN python -m venv venv && \
     . venv/bin/activate && \
-    pip install --no-cache-dir "calibreweb==${CALIBRE_WEB_VERSION}"
+    pip install --no-cache-dir \
+    "calibreweb==${CALIBRE_WEB_VERSION}" \
+    rarfile==4.2 \
+    natsort==8.4.0
 
 EXPOSE 8083
 
