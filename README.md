@@ -16,7 +16,7 @@ Build a specific Calibre‑Web release:
 
 ```bash
 docker build . -t lb803/calibre-web \
-  --build-arg CALIBRE_WEB_VERSION=0.6.25
+  --build-arg CALIBRE_WEB_VERSION=0.6.26
 ```
 
 ---
